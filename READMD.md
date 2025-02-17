@@ -4,7 +4,7 @@ tenant
 namespace
 name
 inputs
-className           com.overctock.dataeng.BigTableSink
+className           com.eg.dataeng.BigTableSink
 parallelism 
 autoAck 
 

@@ -1,4 +1,4 @@
-package com.overctock.dataeng;
+package com.eg.dataeng;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.demo.dataeng.BigTableSink;

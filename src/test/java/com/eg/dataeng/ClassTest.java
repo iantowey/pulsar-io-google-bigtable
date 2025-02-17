@@ -1,4 +1,4 @@
-package com.overctock.dataeng;
+package com.eg.dataeng;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.core.JsonProcessingException;
