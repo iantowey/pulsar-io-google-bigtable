@@ -8,7 +8,7 @@ className           com.eg.dataeng.BigTableSink
 parallelism 
 autoAck 
 
-projectId                   eg-gcp-liverextest-test
+projectId                   eg-gcp-egtest-test
 instanceId                  send-time-bt
 tableName                  coupon-offer-bt-table
 tableColumnFamilies       coupon-offer-cols
