@@ -1,0 +1,37 @@
+version: '2'
+services:
+  pulsar-standalone:
+#    image: datastax/lunastreaming-all:2.10_4.2
+#    image: datastax/lunastreaming-all:2.8.0_1.1.43    # current prod version
+    image: datastax/lunastreaming-all:2.7.2_1.1.21    # current pcdc1 version
+#    image: datastax/lunastreaming-all:2.7.2_1.1.36    # current midgard version
+#    image: apachepulsar/pulsar:latest
+    container_name: pulsar
+    user: root
+    ports:
+      - 6650:6650
+      - 8080:8080
+#    env_file:
+#      - environment_vars.env
+#    volumes:
+#      - ./pulsar-temp/data:/pulsar/data
+    command:
+      - /bin/bash
+      - -c
+      - |
+        sed -i 's/^topicLevelPoliciesEnabled=false/topicLevelPoliciesEnabled=true/' /pulsar/conf/standalone.conf
+        sed -i 's/^brokerDeleteInactiveTopicsEnabled=true/brokerDeleteInactiveTopicsEnabled=false/' /pulsar/conf/standalone.conf 
+        /pulsar/bin/pulsar standalone
+#  nginx:
+#    image: nginx:1.17.3
+#    container_name: nginx
+#    hostname: nginx
+#    ports:
+#      - 18080:80/tcp
+#      - 18443:443/tcp
+
+#        sed -i 's/^schemaCompatibilityStrategy=FULL/schemaCompatibilityStrategy=ALWAYS_INCOMPATIBLE/' /pulsar/conf/broker.conf
+#        sed -i 's/^brokerDeleteInactiveTopicsFrequencySeconds=60/brokerDeleteInactiveTopicsFrequencySeconds=3600/' /pulsar/conf/broker.conf
+#        sed -i 's/^isSchemaValidationEnforced=false/isSchemaValidationEnforced=true/' /pulsar/conf/broker.conf
+#        sed -i 's/^brokerDeleteInactiveTopicsMaxInactiveDurationSeconds=/brokerDeleteInactiveTopicsMaxInactiveDurationSeconds=3600/' /pulsar/conf/broker.conf
+#         sed -i 's/^isAllowAutoUpdateSchemaEnabled=true/isAllowAutoUpdateSchemaEnabled=false/' /pulsar/conf/broker.conf

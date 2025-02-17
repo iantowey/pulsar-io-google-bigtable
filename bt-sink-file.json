@@ -1,0 +1,15 @@
+{
+  "name": "google-bigtable-sink",
+  "className": "com.demo.dataeng.BigTableSink",
+  "tenant": "public",
+  "namespace": "default",
+  "parallelism": 1,
+  "configs": {
+    "google.bigtable.projectId": "eg-gcp-dataengcore-prod",
+    "google.bigtable.instanceId": "test-instance",
+    "google.bigtable.cluster": "test-cluster",
+    "google.bigtable.table.name":"taxonomy-propensity-bt-table",
+    "google.bigtable.table.column.families": "coupon-offer-cols",
+    "google.bigtable.credentialJsonString": "SET_ME"
+  }
+}
